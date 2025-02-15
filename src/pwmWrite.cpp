@@ -438,7 +438,7 @@ void Pwm::wr_duty(int ch, uint32_t duty) {
   }
 }
 
-void Pwm::wr_freq_res(int ch, uint32_t frequency, uint8_t resolution, int pin) {
+void Pwm::wr_freq_res(int ch, uint32_t frequency, uint8_t resolution, uint8_t pin) {
   if ((mem[ch].frequency != frequency) || (mem[ch].resolution != resolution)) {
     ledcAttachChannel(pin, mem[ch].frequency, mem[ch].resolution, ch);
     wr_ch_pair(ch, frequency, resolution);
